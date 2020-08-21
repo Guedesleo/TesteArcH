@@ -1,0 +1,32 @@
+{
+  "name": "testearch",
+  "version": "1.0.0",
+  "description": "Leonardo Guedes",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "ts-node-dev  --ignore-watch node_modules server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guedesleo/TesteArcH.git"
+  },
+  "author": "Leonardo Guedes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guedesleo/TesteArcH/issues"
+  },
+  "homepage": "https://github.com/Guedesleo/TesteArcH#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "httpster": "^1.0.5",
+    "mssql": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.7",
+    "ts-node-dev": "^1.0.0-pre.58",
+    "typescript": "^3.9.7"
+  }
+}
