@@ -21,7 +21,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "httpster": "^1.0.5",
-    "mssql": "^6.2.1"
+    "mssql": "^6.2.1",
+    "pg": "^8.3.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.7",

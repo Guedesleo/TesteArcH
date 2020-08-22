@@ -1,18 +1,10 @@
-const sql = require('mssql')
+const {Pool} = require('pg')
 
-const config = {
-  database: 'SecuritySolution',
+const client = new Pool({
+  database: 'postgres',
   server: 'localhost',
-  user:"sa",
-  password:"Fermath$",
-  port:1433,
-  options: {
-    trustedConnection: true,
-    "encrypt": true,
-    "enableArithAbort": true
-  }
-}
-
-const pool = new sql.ConnectionPool(config).connect()
-
-module.exports = { pool}
+  user:"postgres",
+  password:"1234",
+  port:5432
+})
+module.exports =client

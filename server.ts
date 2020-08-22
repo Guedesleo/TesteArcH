@@ -12,41 +12,41 @@ app.listen(3333,function(){
     console.log("Server is running")
 });
 
-app.get('/',async(request,response)=>{
-    const consulta = await (await db.pool).request().query(`select * from System`);
-    return response.status(200).json(consulta.recordsets[0]);
+app.get('/sistemas',async(request,response)=>{
+    // const consulta = await (await db.pool).request().query(`select * from System`);
+    // return response.status(200).json(consulta.recordsets[0]);
+    const consultar = await db.query(`select * from System`);
+    return response.status(200).json(consultar.rows);
 })
 
-app.get('/get',async(request,response)=>{
-    const Listagem = await (await db.pool).request().query(`select L.IdLogin,L.Nome from Login L where L.login like '%F%'`);
-    return response.status(200).json(Listagem.recordsets[0]);
+app.get('/users',async(request,response)=>{
+    const Listagem = await db.query(`select L.IdLogin,L.Nome from Login L where L.login like '%A%'`);
+    return response.status(200).json(Listagem.rows);
 })
 
 app.get('/Permissoes',async(request,response)=>{
-    const permissao = await (await db.pool).request().query(`
-    SELECT L.login , R.RuleName
-        from LoginRules LR
-        left JOIN Login L on LR.IdLogin = L.IdLogin
-        left JOIN Rules R on LR.IdRule = R.IdRule`);
-        return response.status(200).json(permissao.recordsets[0]);
+    const permissao = await db.query(`
+    SELECT * from Rules`);
+        return response.status(200).json(permissao.rows);
 })
 
-app.post('/create-LoginRules', async (request:Request , response:Response)=>{
-    let {IdLogin,IdRule}=request.body;
+app.post('/create-LoginRules', async (request:Request , response:Response)=>{       
+    let {idlogin}=request.body;
        
     var strsql = `  INSERT INTO LoginRules(IdRule,IdLogin)VALUES ` ;
-    const consultas = await (await db.pool).request().query(`select * from Rules`);
-    consultas.recordsets[0].forEach(cr => {
-        strsql +=`(${cr.IdRule},${IdLogin}),`;
+    const consultas = await db.query(`select * from Rules`);
+
+    consultas.rows.forEach(cr => {
+        strsql +=`(${cr.idrule},${idlogin}),`;
     });
     strsql= strsql.substring(0,strsql.lastIndexOf(','));
 
-    const CreateInstrutor = await (await db.pool).request().query(strsql)
-    return response.status(200).json(CreateInstrutor);
+    await db.query(strsql)
+    return response.status(200).json({sucess:true});
 });
 
-app.delete('/LoginRules/:id', async (request:Request , response:Response)=>{
+app.delete('/delete-LoginRules/:id', async (request:Request , response:Response)=>{
     const {id} = request.params;
-    await (await db.pool).request().query(`Delete  from LoginRules where IdLogin = ${id}`);
+    await db.query(`Delete  from LoginRules where IdLogin = ${id}`);
     return response.status(204).json({message: true});
 });

@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecuritySolution</title>
     <link rel="stylesheet" href="./styles.css">
+    
 </head>
 <body>
         <form class='form'>   
+
             <div class="header">
-            <img src="assets/reticencias1.png">
+                <img src="assets/reticencias1.png">
             </div>
 
-            <div class="divBusca">
-                <input type="text" class="txtBusca" placeholder="Login"/>
-                <img src="assets/search.svg" class="btnBusca" alt="Buscar"/>
+            <div class="container">  
+                <input class="search-input" type="text" placeholder="Login" id="Login" autocomplete="off" />
+                      <img src="assets/search.svg" class="btnBusca" alt="Buscar"/>
+                <div class="suggestions">
+                </div>
             </div>
 
-            <div class="select">
-                        <select name="Sistemma" id="instrumento">
-                            <option value="0">Selecione um Sistema</option>
+            <div class="select"id="select" onclick="Sistemas()" >
+                        <select name="Sistema" id="sistema">
+                            <option >Selecione um Sistema</option>
                         </select>
             <div>
 
@@ -28,17 +32,17 @@
             </div>
 
             <div class="check">
-                <input type="checkbox" class="vehicle1" name="vehicle1" value="ListCar">
-                <label for="vehicle1"> Listagem Carro</label><br>
-                <input type="checkbox" class="vehicle2" name="vehicle2" value="Car">
-                <label for="vehicle2"> Cadastrar Carro</label><br>
+                <div id="check" class="ListagemPermissao"></div>
             </div>
-
-            <div class="btn">
-                <button id="btnMT">Marcar Todos</button>
-                <button id="btnIVT">Inverter</button>
-                <button id="btnSubmit">Salvar</button>
-            <div>
         </form>
-<body>
+
+        <div class="btn">
+            <button type="button" id="btnMT" onclick="checkbox()">Marcar Todos</button>
+            <button type="button" id="btnIVT">Inverter</button>
+            <button type="button" id="btnSubmit">Salvar</button>
+        <div>
+        <script src="index.js"></script>
+        <script src="main.js"></script>
+
+</body>
 </html>
