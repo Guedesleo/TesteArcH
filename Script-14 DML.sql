@@ -4,12 +4,12 @@ SELECT * FROM Rules
 SELECT * FROM LoginRules
 
 INSERT INTO Login (login, passaword, Nome, Email)
-VALUES ('ferando@ArcH.com.br',' pf2543', 'Fernando' , 'ferando@ArcH.com.br'),
-	   ('leonardo.gudes@ArcH.com.br',' leo123', 'Leonardo Guedes da Rocha' , 'leonardo.guedes@ArcH.com.br'),
-	   ('andreia@ArcH.com.br',' am1601', 'Andreia' , 'andreia@ArcH.com.br'),
-	   ('Leandro@ArcH.com.br',' 123leandro', 'Leandro' , 'Leandro@ArcH.com.br'),
-	   ('andre@ArcH.com.br',' andre12as', 'Andre' , 'andre@ArcH.com.br'),
-	   ('fabio@ArcH.com.br',' fabio12as', 'fabio' , 'fabio@ArcH.com.br')
+VALUES ('JoãoFulano@ArcH.com.br','pf2543', 'João Fulano' , 'JoãoFulano@ArcH.com.br'),
+	   ('leonardo.Fulano@ArcH.com.br',' leo123', 'Leonardo Fulado' , 'leonardo.Fulado@ArcH.com.br'),
+	   ('andreia.Fulano@ArcH.com.br',' am1601', 'Andreia Fulano' , 'andreia.Fulado@ArcH.com.br'),
+	   ('Leandro.Fulano@ArcH.com.br',' 123leandro', 'Leandro Fulano' , 'Leandro.Fulado@ArcH.com.br'),
+	   ('andre.Fulano@ArcH.com.br',' andre12as', 'Andre Fulano' , 'andre.Fulado@ArcH.com.br'),
+	   ('fabio.Fulano@ArcH.com.br',' fabio12as', 'fabio Fulano' , 'fabio.Fulado@ArcH.com.br')
 	   
 INSERT INTO Rules (RuleName, IdSystem)
 	VALUES('Cadastrar Carros',2),
