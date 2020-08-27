@@ -8,22 +8,21 @@
     
 </head>
 <body>
-        <form class='form'>   
+        <form class='form' >   
 
             <div class="header">
                 <img src="assets/reticencias1.png">
             </div>
 
             <div class="container">  
-                <input class="search-input" type="text" placeholder="Login" id="Login" autocomplete="off" />
+                <input class="search-input" type="text" placeholder="Login" id="login" autocomplete="off" >
                       <img src="assets/search.svg" class="btnBusca" alt="Buscar"/>
-                <div class="suggestions">
-                </div>
+                <div class="suggestions" id="suggestions"   ></div>
             </div>
 
-            <div class="select"id="select" onclick="Sistemas()" >
+            <div class="select"id="select"  >
                         <select name="Sistema" id="sistema">
-                            <option >Selecione um Sistema</option>
+                            <option value="0">Selecione um Sistema</option>
                         </select>
             <div>
 
@@ -31,18 +30,21 @@
                     <h1>Lista de Permissão<h1>
             </div>
 
-            <div class="check">
-                <div id="check" class="ListagemPermissao"></div>
+            <div class="check" id="teste">
+                <div id="check" class="ListagemPermissao">
+                </div>
             </div>
+            <input type="hidden" id="hddIdLogin" value="" />
         </form>
 
         <div class="btn">
-            <button type="button" id="btnMT" onclick="checkbox()">Marcar Todos</button>
+            
+            <button type="button" id="btnMT">Marcar Todos</button>
             <button type="button" id="btnIVT">Inverter</button>
-            <button type="button" id="btnSubmit">Salvar</button>
-        <div>
+            <button type="button" id="btnSubmit" >Salvar</button>
+        <div>        
+        <script src="apiservices.js"></script>
         <script src="index.js"></script>
-        <script src="main.js"></script>
 
 </body>
 </html>
